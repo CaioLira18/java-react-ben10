@@ -2,19 +2,54 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background: #144200;
+  background: linear-gradient(90deg,rgb(4, 10, 1) 0%, rgb(5, 27, 0) 99%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.homeContainer {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.backgroundOverlay {
+  position: fixed;
+  inset: 0;
+  background-image: url('https://res.cloudinary.com/dthgw4q5d/image/upload/v1751301381/cf3c5mya0xc71_upscayl_2x_realesrgan-x4plus_qsfhrt.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.homeContainer > *:not(.backgroundOverlay) {
+  position: relative;
+  z-index: 1;
+}
+
+
 h1 {
   color: white;
+}
+
+/* Cabecalho */
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cabecalho img {
+  width: 100px;
 }
 
 /* Ominitrix */
@@ -46,13 +81,21 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 100px;
+  gap: 40px;
 }
 
 .containerAlien {
+  display: flex;
   width: 100px;
   height: 100px;
   border-radius: 90px;
   background-color: rgb(0, 0, 0);
+  transition: 0.4s all ease-in-out;
+}
+
+.containerAlien:hover {
+  transform: scale(1.4);
 }
 
 .boxAlien {
@@ -78,6 +121,17 @@ h1 {
   background: #144200;
   background: linear-gradient(90deg,rgba(20, 66, 0, 1) 0%, rgba(11, 56, 0, 1) 59%);
   box-shadow: 0px 0px 10px rgb(177, 255, 183);
+  margin-top: 100px;
+}
+
+.alienImage {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.alienImage img {
+  width: 350px;
 }
 
 .boxAlienImage {
@@ -94,10 +148,13 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: left;
-  width: 500px;
+  width: 600px;
 }
 
 .containerInformations h1 {
-  font-size: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 15px;
   text-align: justify;
 }

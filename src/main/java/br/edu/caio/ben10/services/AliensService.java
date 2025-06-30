@@ -38,6 +38,10 @@ public class AliensService {
             alienToUpdate.setRace(aliens.getRace());
             alienToUpdate.setPowers(aliens.getPowers());
             alienToUpdate.setFirstAppearance(aliens.getFirstAppearance());
+            alienToUpdate.setImage1(aliens.getImage1());
+            alienToUpdate.setImage2(aliens.getImage2());
+            alienToUpdate.setImage3(aliens.getImage3());
+
             return aliensRepository.save(alienToUpdate);
         }
         return null;

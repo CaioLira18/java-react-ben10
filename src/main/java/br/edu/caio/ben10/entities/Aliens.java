@@ -29,4 +29,7 @@ public class Aliens {
     private String race;
     private String powers;
     private String firstAppearance;
+    private String image1;
+    private String image2;
+    private String image3;
 }
