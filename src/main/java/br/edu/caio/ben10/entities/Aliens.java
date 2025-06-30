@@ -1,5 +1,6 @@
 package br.edu.caio.ben10.entities;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,6 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Entity
 @Table(name="tb_aliens")
 public class Aliens {
 
