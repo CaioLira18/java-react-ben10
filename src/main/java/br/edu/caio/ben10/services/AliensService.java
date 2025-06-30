@@ -32,6 +32,8 @@ public class AliensService {
         if(existingAlien.isPresent()){
             Aliens alienToUpdate = existingAlien.get();
             alienToUpdate.setName(aliens.getName());
+            alienToUpdate.setImageOmitrix(aliens.getImageOmitrix());
+            alienToUpdate.setImageHuge(aliens.getImageHuge());
             alienToUpdate.setPlanet(aliens.getPlanet());
             alienToUpdate.setRace(aliens.getRace());
             alienToUpdate.setPowers(aliens.getPowers());

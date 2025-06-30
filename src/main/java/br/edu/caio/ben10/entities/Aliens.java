@@ -23,6 +23,8 @@ public class Aliens {
     private String id;
 
     private String name;
+    private String imageOmitrix;
+    private String imageHuge;
     private String planet;
     private String race;
     private String powers;
