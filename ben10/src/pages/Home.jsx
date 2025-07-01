@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 const Home = () => {
   const [aliens, setAliens] = useState([]);
   const [selectedAlien, setSelectedAlien] = useState(null); // Alien selecionado
+  const [characters, setCharacters] = useState([]);
+  const [selectedCharacter, setSelectedCharacter] = useState(null); // Alien selecionado
 
   const API_URL = "http://localhost:8080/api";
 
@@ -18,6 +20,21 @@ const Home = () => {
       })
       .catch(error => {
         console.error('Erro ao buscar Aliens:', error);
+      });
+  }, []);
+
+   useEffect(() => {
+    fetch(`${API_URL}/characters`)
+      .then(response => response.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          setCharacters(data);
+        } else {
+          console.error('Formato inesperado para Characters:', data);
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao buscar Characters:', error);
       });
   }, []);
 
@@ -74,6 +91,41 @@ const Home = () => {
           </div>
         </>
       )}
+
+    
+      <div className="characters">
+            <h1>Characters</h1>
+            <div className="charactersChoose">
+              {characters.map((character, i) => (
+                <div key={i} className="containerAlien" onClick={() => setSelectedCharacter(character)}>
+                  <div className="boxAlien">
+                    <img src={character.imageHuge} alt={character.name} />
+                  </div>
+                </div>
+              ))}
+            </div>
+             {selectedCharacter && (
+              <>
+            <div className="containerCharacter">
+                <div className="boxCharacters">
+                    <div className="containerInformations">
+                <div className="characterImage">
+                    <img src={selectedCharacter.imageHuge} alt="" />
+                </div>
+                  <div className="boxInformations">
+                    <h1>Nome: {selectedCharacter.name} </h1>
+                    <h1>Idade: {selectedCharacter.age} </h1>
+                    <h1>Raça:  {selectedCharacter.race}</h1>
+                    <h1>Poderes: {selectedCharacter.powers}</h1>
+                    <h1>Primeira Aparição: {selectedCharacter.firstAppearance}</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+             </>
+          )}
+      </div>
+      
     </div>
   );
 };
