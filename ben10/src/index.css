@@ -12,11 +12,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Base Styles */
 .homeContainer {
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
+  padding: 0 20px;
 }
 
 .backgroundOverlay {
@@ -35,26 +37,27 @@
   z-index: 1;
 }
 
-
 h1 {
   color: white;
 }
 
-/* Cabecalho */
-
+/* Cabeçalho */
 .cabecalho {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px 0;
 }
 
 .cabecalho img {
   width: 100px;
+  max-width: 100%;
+  height: auto;
 }
 
-/* Ominitrix */
+/* Omnitrix */
 
-.ominitrix {
+.aliensInformations {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,142 +67,372 @@ h1 {
 .containerOmnitrix {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .alienHologram img {
-  width: 200px;
+  width: 150px;
+  max-width: 100%;
+  height: auto;
 }
 
 .boxOminitrix img {
-  width: 400px;
-  margin-top: -120px;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  margin-top: -80px;
 }
 
 /* Alien Choose */
-
 .aliensChoose {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
-  gap: 40px;
+  margin-top: 50px;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 20px;
 }
 
 .containerAlien {
   display: flex;
-  width: 100px;
-  height: 100px;
-  border-radius: 90px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   background-color: rgb(0, 0, 0);
   transition: 0.4s all ease-in-out;
+  cursor: pointer;
 }
 
 .containerAlien:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
 }
 
 .boxAlien {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .boxAlien img {
   width: 90%;
+  height: auto;
 }
 
 /* Informações */
-
 .informations {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  max-width: 1000px;
-  height: 400px;
+  max-width: 90%;
+  padding: 20px;
   border-radius: 10px;
-  background: #144200;
   background: linear-gradient(90deg,rgba(20, 66, 0, 1) 0%, rgba(11, 56, 0, 1) 59%);
   box-shadow: 0px 0px 10px rgb(177, 255, 183);
-  margin-top: 100px;
 }
 
+.containerInformations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+}
 
 .alienImage {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
 }
 
 .alienImage img {
-  width: 350px;
+  width: 200px;
   transition: 0.3s all ease-in-out;
 }
 
 .alienImage img:hover {
   filter: drop-shadow(0 4px 10px rgba(254, 255, 254, 0.6));
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-.boxAlienImage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.boxInformations {
+  text-align: center;
 }
 
-.boxAlienImage img {
-  width: 400px;
-}
-
-.containerInformations{
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  width: 700px;
-}
-
-.containerInformations h1 {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+.boxInformations h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 1px;
   font-weight: bold;
-  font-size: 15px;
-  text-align: left;
+  font-size: 14px;
+  margin: 8px 0;
 }
 
 /* Characters */
+.characters {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.characters > h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
 
 .charactersChoose {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
-  gap: 40px;
+  margin-top: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 20px;
 }
 
 .boxCharacters {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1000px;
-  height: 400px;
+  margin: 0;
+  max-width: 90%;
+  padding: 20px;
   border-radius: 10px;
-  margin: auto;
-  background-color: #144200;
-  margin-top: 100px;
+  margin: 50px auto;
+  background: linear-gradient(90deg,rgba(20, 66, 0, 1) 0%, rgba(11, 56, 0, 1) 59%);
+  box-shadow: 0px 0px 10px rgb(177, 255, 183);
 }
 
 .characterImage {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
 }
 
 .characterImage img {
-  width: 350px;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
   transition: 0.3s all ease-in-out;
 }
 
 .characterImage img:hover {
   filter: drop-shadow(0 4px 10px rgba(254, 255, 254, 0.6));
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+/* Media Queries para Responsividade */
+
+/* Tablets - 768px e acima */
+@media (min-width: 768px) {
+  .homeContainer {
+    padding: 0 40px;
+  }
+  
+  .cabecalho img {
+    width: 120px;
+  }
+  
+  .alienHologram img {
+    width: 180px;
+  }
+  
+  .boxOminitrix img {
+    width: 350px;
+    margin-top: -100px;
+  }
+  
+  .containerAlien {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .containerAlien:hover {
+    transform: scale(1.3);
+  }
+  
+  .aliensChoose {
+    gap: 30px;
+  }
+  
+  .charactersChoose {
+    gap: 30px;
+  }
+  
+  .containerInformations {
+    flex-direction: row;
+    gap: 30px;
+  }
+  
+  .alienImage img,
+  .characterImage img {
+    width: 250px;
+  }
+  
+  .boxInformations {
+    text-align: left;
+  }
+  
+  .boxInformations h1 {
+    font-size: 15px;
+  }
+  
+  .informations {
+    max-width: 700px;
+  }
+  
+  .boxCharacters {
+    max-width: 800px;
+  }
+}
+
+/* Desktop - 1024px e acima */
+@media (min-width: 1024px) {
+  .homeContainer {
+    padding: 0 60px;
+  }
+  
+  .cabecalho img {
+    width: 150px;
+  }
+  
+  .ominitrix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: -250px;
+  }
+  
+  .alienHologram img {
+    width: 200px;
+  }
+  
+  .boxOminitrix img {
+    width: 400px;
+    margin-top: -120px;
+  }
+  
+  .containerAlien {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .containerAlien:hover {
+    transform: scale(1.4);
+  }
+  
+  .aliensChoose {
+    gap: 40px;
+    margin-top: 100px;
+  }
+  
+  .charactersChoose {
+    gap: 40px;
+    margin-top: 100px;
+  }
+  
+  .informations {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    max-width: 700px;
+    height: 400px;
+  }
+  
+  .containerInformations {
+    width: 700px;
+    justify-content: flex-start;
+  }
+  
+  .alienImage img,
+  .characterImage img {
+    width: 350px;
+  }
+  
+  .alienImage img:hover,
+  .characterImage img:hover {
+    transform: scale(1.1);
+  }
+  
+  .boxInformations h1 {
+    font-size: 16px;
+  }
+  
+  .boxCharacters {
+    max-width: 1000px;
+    height: 400px;
+    margin-top: 100px;
+  }
+}
+
+/* Desktop Grande - 1440px e acima */
+@media (min-width: 1440px) {
+  .homeContainer {
+    padding: 0 80px;
+  }
+  
+  .informations {
+    margin-right: 150px;
+  }
+  
+  .ominitrix {
+    padding-left: 150px;
+  }
+}
+
+/* Mobile pequeno - 480px e abaixo */
+@media (max-width: 480px) {
+  .homeContainer {
+    padding: 0 15px;
+  }
+  
+  .cabecalho img {
+    width: 80px;
+  }
+  
+  .alienHologram img {
+    width: 120px;
+  }
+  
+  .boxOminitrix img {
+    width: 250px;
+    margin-top: -60px;
+  }
+  
+  .containerAlien {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .aliensChoose {
+    gap: 15px;
+    margin-top: 30px;
+  }
+  
+  .charactersChoose {
+    gap: 15px;
+    margin-top: 30px;
+  }
+  
+  .alienImage img,
+  .characterImage img {
+    width: 150px;
+  }
+  
+  .boxInformations h1 {
+    font-size: 12px;
+    margin: 5px 0;
+  }
+  
+  .characters > h1 {
+    font-size: 1.5rem;
+  }
+  
+  .informations,
+  .boxCharacters {
+    padding: 15px;
+    margin: 30px auto;
+  }
 }
