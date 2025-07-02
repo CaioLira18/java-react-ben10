@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import AlienHologram from '../components/AlienHologram';
 
 const Home = () => {
   const [aliens, setAliens] = useState([]);
@@ -46,11 +47,6 @@ const Home = () => {
         <div className="icon">
             <img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751299043/808df0e1d0d32768a4a5fdf6b5e8f5ec_jbrff1.png" alt="" />
         </div>
-        
-        <div className="languagesBox">
-          <a href=""><img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751489391/bandeiraBrasil_jgnkxu.png" alt="Linguagem Brasileira" /></a>
-          <a href=""><img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751489391/bandeiraUSA_cuqfoq.png" alt="Linguagem Inglesa" /></a>
-        </div>
       </div>
 
    
@@ -70,15 +66,12 @@ const Home = () => {
         ))}
       </div>
 
-
       {selectedAlien && (
         <>
         <div className="aliensInformations">
           <div className="ominitrix">
             <div className="containerOmnitrix">
-              <div className="alienHologram">
-                <img src={selectedAlien.imageOmitrix} alt={selectedAlien.name} />
-              </div>
+              <AlienHologram selectedAlien={selectedAlien} />
               <div className="boxOminitrix">
                 <img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751293359/omnitrix_h70yjq.png" alt="Omnitrix" />
               </div>
