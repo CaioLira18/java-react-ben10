@@ -43,8 +43,17 @@ const Home = () => {
       <div className="backgroundOverlay"></div>
 
       <div className="cabecalho">
-        <img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751299043/808df0e1d0d32768a4a5fdf6b5e8f5ec_jbrff1.png" alt="" />
+        <div className="icon">
+            <img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751299043/808df0e1d0d32768a4a5fdf6b5e8f5ec_jbrff1.png" alt="" />
+        </div>
+        
+        <div className="languagesBox">
+          <a href=""><img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751489391/bandeiraBrasil_jgnkxu.png" alt="Linguagem Brasileira" /></a>
+          <a href=""><img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751489391/bandeiraUSA_cuqfoq.png" alt="Linguagem Inglesa" /></a>
+        </div>
       </div>
+
+   
 
       
       <div className="aliensChoose">
@@ -118,20 +127,20 @@ const Home = () => {
               <>
             <div className="containerCharacter">
                 <div className="boxCharacters">
-                    <div className="containerInformations">
-                <div className="characterImage">
-                    <img src={selectedCharacter.imageHuge} alt="" />
-                </div>
-                  <div className="boxInformations">
-                    <h1>Nome: {selectedCharacter.name} </h1>
-                    <h1>Idade: {selectedCharacter.age} </h1>
-                    <h1>Raça:  {selectedCharacter.race}</h1>
-                    <h1>Poderes: {selectedCharacter.powers}</h1>
-                    <h1>Primeira Aparição: {selectedCharacter.firstAppearance}</h1>
+                  <div className="containerInformationsCharacters">
+                    <div className="characterImage">
+                        <img src={selectedCharacter.imageHuge} alt="" />
+                    </div>
+                    <div className="boxInformations">
+                      <h1>Nome: {selectedCharacter.name} </h1>
+                      <h1>Idade: {selectedCharacter.age} </h1>
+                      <h1>Raça:  {selectedCharacter.race}</h1>
+                      <h1>Poderes: {selectedCharacter.powers}</h1>
+                      <h1>Primeira Aparição: {selectedCharacter.firstAppearance}</h1>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
              </>
           )}
       </div>
