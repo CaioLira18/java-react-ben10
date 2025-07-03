@@ -40,71 +40,67 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="homeContainer">
-      <div className="backgroundOverlay"></div>
-
+    <div>
       <div className="cabecalho">
         <div className="icon">
             <img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751299043/808df0e1d0d32768a4a5fdf6b5e8f5ec_jbrff1.png" alt="" />
         </div>
       </div>
 
-   
-
-      
-      <div className="aliensChoose">
-        {aliens.map((alien, i) => (
-          <div key={i} className="containerAlien" onClick={() => {
-              const audio = new Audio('/sound/Sound.mp3');
-              audio.play();
-              setSelectedAlien(alien);
-            }}>
-            <div className="boxAlien">
-              <img src={alien.imageHuge} alt={alien.name} />
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {selectedAlien && (
-        <>
-        <div className="aliensInformations">
-          <div className="ominitrix">
-            <div className="containerOmnitrix">
-              <AlienHologram selectedAlien={selectedAlien} />
-              <div className="boxOminitrix">
-                <img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751293359/omnitrix_h70yjq.png" alt="Omnitrix" />
+      <div className="alienArea">
+        <div className="aliensChoose">
+          {aliens.map((alien, i) => (
+            <div key={i} className="containerAlien" onClick={() => {
+                const audio = new Audio('/sound/Sound.mp3');
+                audio.play();
+                setSelectedAlien(alien);
+              }}>
+              <div className="boxAlien">
+                <img src={alien.imageHuge} alt={alien.name} />
               </div>
             </div>
+          ))}
+        </div>
 
-            <div className="informations">
-            <div className="containerInformations">
-              <div className="alienImage">
-                <img src={selectedAlien.imageHuge} alt="" />
+        {selectedAlien && (
+          <>
+          <div className="aliensInformations">
+            <div className="ominitrix">
+              <div className="containerOmnitrix">
+                <AlienHologram selectedAlien={selectedAlien} />
+                <div className="boxOminitrix">
+                  <img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751293359/omnitrix_h70yjq.png" alt="Omnitrix" />
+                </div>
               </div>
-              <div className="boxInformations">
-                <h1>Nome: {selectedAlien.name}</h1>
-                <h1>Planeta: {selectedAlien.planet}</h1>
-                <h1>Raça: {selectedAlien.race}</h1>
-                <h1>Poderes: {selectedAlien.powers}</h1>
-                <h1>Primeira Aparição: {selectedAlien.firstAppearance}</h1>
+
+              <div className="informations">
+              <div className="containerInformations">
+                <div className="alienImage">
+                  <img src={selectedAlien.imageHuge} alt="" />
+                </div>
+                <div className="boxInformations">
+                  <h1>Nome: {selectedAlien.name}</h1>
+                  <h1>Planeta: {selectedAlien.planet}</h1>
+                  <h1>Raça: {selectedAlien.race}</h1>
+                  <h1>Poderes: {selectedAlien.powers}</h1>
+                  <h1>Primeira Aparição: {selectedAlien.firstAppearance}</h1>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      
     
           <div className="alienImages">
             <img src="" alt="" />
             <img src="" alt="" />
             <img src="" alt="" />
-          </div>
-           
-        </>
-      )}
+          </div> 
+          </>
+        )}
+    </div>
    
 
-    
       <div className="characters">
             <h1>Characters</h1>
             <div className="charactersChoose">
