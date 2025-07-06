@@ -75,6 +75,12 @@ const Home = () => {
 
               <div className="informations">
               <div className="containerInformations">
+                {selectedAlien.role == "ULTIMATE" && (
+                  <div className="normalUltimate">
+                    <img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751834081/alienLogo_nc36n8.png" alt="" />
+                    <img src="https://res.cloudinary.com/dthgw4q5d/image/upload/v1751833855/ultimate_itex3n.png" alt="" />
+                  </div>
+                )}
                 <div className="alienImage">
                   <img src={selectedAlien.imageHuge} alt="" />
                 </div>

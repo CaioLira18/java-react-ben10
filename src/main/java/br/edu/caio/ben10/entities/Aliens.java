@@ -22,6 +22,8 @@ public class Aliens {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    private AlienRole role;
+
     private String name;
     private String imageOmitrix;
     private String imageHuge;

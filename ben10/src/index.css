@@ -8,6 +8,11 @@
   text-rendering: optimizeLegibility;
 }
 
+@font-face {
+  font-family: 'Demonized';
+  src: url('/public/font/Oxanium-ExtraLight.ttf') format('truetype');
+}
+
 #root {
   width: 100%;
   max-width: 100%;
@@ -34,10 +39,6 @@ html, body {
 
 body > div {
   width: 100%;
-}
-
-h1 {
-  color: white;
 }
 
 /* Cabeçalho */
@@ -233,17 +234,28 @@ h1 {
 }
 
 .boxInformations h1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  letter-spacing: 1px;
+  font-family: 'Demonized';
+  border-bottom: 1px solid white;
+  border-radius: 5px;
   font-weight: bold;
-  font-size: 14px;
-  margin: 8px 0;
+  padding: 5px;
 }
 
 .containerInformations {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.normalUltimate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.normalUltimate img {
+  width: 100px;
 }
 
 /* Characters */
@@ -414,6 +426,7 @@ h1 {
     width: 800px;
     justify-content: center;
     max-width: 100vw;
+    height: 100%;
   }
   
   .alienImage img,
@@ -427,9 +440,6 @@ h1 {
     transform: scale(1.1);
   }
   
-  .boxInformations h1 {
-    font-size: 16px;
-  }
 }
 
 /* Mobile pequeno - 480px e abaixo */
@@ -466,6 +476,10 @@ h1 {
   .alienImage img,
   .characterImage img {
     width: 150px;
+  }
+
+  .normalUltimate img {
+    width: 50px;
   }
   
   .boxInformations h1 {
