@@ -34,4 +34,11 @@ public class Aliens {
     private String image1;
     private String image2;
     private String image3;
+
+    private String ultimateRace;
+    private String ultimateName;
+    private String ultimateFirstAppearance;
+    private String imageUltimateHuge;
+    private String UltimatePowers;
+
 }

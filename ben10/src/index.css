@@ -254,6 +254,12 @@ body > div {
   justify-content: center;
 }
 
+ .buttonForm  {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+ }
+
 .normalUltimate img {
   width: 100px;
 }
