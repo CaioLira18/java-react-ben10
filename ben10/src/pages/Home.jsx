@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import AlienHologram from '../components/AlienHologram';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const clickSound = new Audio('/sound/Sound.mp3');
 
@@ -13,6 +13,23 @@ const Home = () => {
   const [ultimateSelected, setUltimateSelected] = useState(null);
   const [visibleCount, setVisibleCount] = useState(8);
   const [animatingItems, setAnimatingItems] = useState(new Set());
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const images = [
+    selectedAlien?.image1,
+    selectedAlien?.image2,
+    selectedAlien?.image3,
+  ].filter(Boolean); 
+
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+  
   
   const showMoreAliens = () => {
     clickSound.play();
@@ -157,14 +174,23 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="alienImages">
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-            </div>
           </>
         )}
       </div>
+
+      {selectedAlien && (
+      <div className="alienImages">
+      <img
+        src={images[currentIndex]}
+        alt={`Slide ${currentIndex}`}
+
+      />
+      <div className="navigation-buttons">
+        <button onClick={handlePrev}><FontAwesomeIcon icon={faAngleLeft} /></button>
+        <button onClick={handleNext}><FontAwesomeIcon icon={faAngleRight} /></button>
+      </div>
+    </div>
+      )}
 
       <div className="characters">
         <h1>Characters</h1>
