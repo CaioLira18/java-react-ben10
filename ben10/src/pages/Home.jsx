@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import AlienHologram from '../components/AlienHologram';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const clickSound = new Audio('/sound/Sound.mp3');
 
@@ -9,6 +11,31 @@ const Home = () => {
   const [characters, setCharacters] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [ultimateSelected, setUltimateSelected] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(8);
+  const [animatingItems, setAnimatingItems] = useState(new Set());
+  
+  const showMoreAliens = () => {
+    clickSound.play();
+    const currentCount = visibleCount;
+    const newCount = Math.min(currentCount + 8, aliens.length);
+    
+    // Marca os novos itens para animação
+    const newItems = new Set();
+    for (let i = currentCount; i < newCount; i++) {
+      newItems.add(i);
+    }
+    setAnimatingItems(newItems);
+    
+    setVisibleCount(newCount);
+    
+    // Remove a animação após completar
+    setTimeout(() => {
+      setAnimatingItems(new Set());
+    }, 600);
+  };
+
+  const visibleAliens = aliens.slice(0, visibleCount);
+  const hasMoreAliens = visibleCount < aliens.length;
 
   const API_URL = "http://localhost:8080/api";
 
@@ -42,10 +69,10 @@ const Home = () => {
 
       <div className="alienArea">
         <div className="aliensChoose">
-          {aliens.map((alien, i) => (
+          {visibleAliens.map((alien, i) => (
             <div
               key={i}
-              className="containerAlien"
+              className={`containerAlien ${animatingItems.has(i) ? 'alien-fade-in' : ''}`}
               onClick={() => {
                 clickSound.play();
                 setSelectedAlien(alien);
@@ -58,6 +85,14 @@ const Home = () => {
             </div>
           ))}
         </div>
+
+        {hasMoreAliens && (
+          <div className="divider" onClick={showMoreAliens}>
+            <span className="divider-arrow">
+              <FontAwesomeIcon icon={faPlus} />
+            </span>
+          </div>
+        )}
 
         {selectedAlien && (
           <>
@@ -138,7 +173,9 @@ const Home = () => {
             <div
               key={i}
               className="containerAlien"
-              onClick={() => setSelectedCharacter(character)}
+              onClick={() => {
+                setSelectedCharacter(character);
+              }}
             >
               <div className="boxAlien">
                 <img src={character.imageHuge || ''} alt={character.name || ''} />
