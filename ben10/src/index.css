@@ -363,6 +363,7 @@ body > div {
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  cursor: auto;
 }
 
 .divider span {
@@ -374,14 +375,12 @@ body > div {
   width: 50px;
   height: 50px;
   transition: 0.3s all ease-in-out;
+  cursor: pointer;
 }
 
 .divider span:hover {
   background-color: white;
-}
-
-.divider:hover {
-  transform: scale(1.1);
+  color: #000000;
 }
 
 .divider-arrow {
@@ -390,10 +389,6 @@ body > div {
   animation: pulse 2s infinite;
 }
 
-.divider:hover .divider-arrow {
-  color: #000000;
-  transform: translateX(5px);
-}
 
 @keyframes pulse {
   0% {
