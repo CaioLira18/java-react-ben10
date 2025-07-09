@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 # Ignorar arquivo de configuração sensível
 src/main/resources/application.properties
+
