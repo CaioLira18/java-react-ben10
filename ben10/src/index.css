@@ -263,6 +263,7 @@ body > div {
   width: 600px;
   margin: 0 auto;
   transition: 0.3s all ease-in-out;
+  border-radius: 10px;
 }
 
 .boxInformations {
