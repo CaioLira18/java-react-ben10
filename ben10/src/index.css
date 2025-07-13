@@ -358,6 +358,7 @@ body > div {
 }
 
 .characterImage img {
+  margin-top: 20px;
   border-radius: 10px;
   transition: 0.3s all ease-in-out;
 }

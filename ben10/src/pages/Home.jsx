@@ -166,7 +166,7 @@ const Home = () => {
                         <h1>Nome: {selectedAlien.name}</h1>
                         <h1>Planeta: {selectedAlien.planet}</h1>
                         <h1>Raça: {selectedAlien.race}</h1>
-                        <h1>Poderes: {selectedAlien.powers}</h1>
+                        <h1>Habilidades / Poderes: {selectedAlien.powers}</h1>
                         <h1>Primeira Aparição: {selectedAlien.firstAppearance}</h1>
                       </div>
                     )}
@@ -176,7 +176,7 @@ const Home = () => {
                         <h1>Nome: {selectedAlien.ultimateName}</h1>
                         <h1>Planeta: {selectedAlien.planet}</h1>
                         <h1>Raça: {selectedAlien.ultimateRace}</h1>
-                        <h1>Poderes: {selectedAlien.ultimatePowers}</h1>
+                        <h1>Habilidades / Poderes: {selectedAlien.ultimatePowers}</h1>
                         <h1>Primeira Aparição: {selectedAlien.ultimateFirstAppearance}</h1>
                       </div>
                     )}
@@ -231,7 +231,7 @@ const Home = () => {
                   <h1>Nome: {selectedCharacter.name}</h1>
                   <h1>Idade: {selectedCharacter.age}</h1>
                   <h1>Raça: {selectedCharacter.race}</h1>
-                  <h1>Poderes: {selectedCharacter.powers}</h1>
+                  <h1>Habilidades / Poderes: {selectedCharacter.powers}</h1>
                   <h1>Primeira Aparição: {selectedCharacter.firstAppearance}</h1>
                 </div>
               </div>
