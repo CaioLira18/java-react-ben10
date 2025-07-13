@@ -344,6 +344,19 @@ body > div {
   box-shadow: 0px 0px 10px rgb(177, 255, 183);
 }
 
+.containerOmnitrixInformations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 700px;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 50px auto;
+  background: linear-gradient(90deg,rgba(20, 66, 0, 1) 0%, rgba(11, 56, 0, 1) 59%);
+  box-shadow: 0px 0px 10px rgb(177, 255, 183);
+}
+
 .characterImage img {
   border-radius: 10px;
   transition: 0.3s all ease-in-out;
