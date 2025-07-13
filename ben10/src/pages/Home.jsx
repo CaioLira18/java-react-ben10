@@ -9,7 +9,9 @@ const Home = () => {
   const [aliens, setAliens] = useState([]);
   const [selectedAlien, setSelectedAlien] = useState(null);
   const [characters, setCharacters] = useState([]);
+  const [ominitrix, setOmnitrix] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [selectedOmnitrix, setSelectedOmnitrix] = useState(null);
   const [ultimateSelected, setUltimateSelected] = useState(null);
   const [visibleCount, setVisibleCount] = useState(8);
   const [animatingItems, setAnimatingItems] = useState(new Set());
@@ -71,6 +73,16 @@ const Home = () => {
       .then(response => response.json())
       .then(data => {
         if (Array.isArray(data)) setCharacters(data);
+        else console.error('Formato inesperado para Characters:', data);
+      })
+      .catch(error => console.error('Erro ao buscar Characters:', error));
+  }, []);
+
+  useEffect(() => {
+    fetch(`${API_URL}/omnitrix`)
+      .then(response => response.json())
+      .then(data => {
+        if (Array.isArray(data)) setOmnitrix(data);
         else console.error('Formato inesperado para Characters:', data);
       })
       .catch(error => console.error('Erro ao buscar Characters:', error));
@@ -221,6 +233,40 @@ const Home = () => {
                   <h1>Idade: {selectedCharacter.age}</h1>
                   <h1>Raça: {selectedCharacter.race}</h1>
                   <h1>Poderes: {selectedCharacter.powers}</h1>
+                  <h1>Primeira Aparição: {selectedCharacter.firstAppearance}</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="characters">
+        <h1>Omnitrix</h1>
+        <div className="charactersChoose">
+          {ominitrix.map((omnitrix, i) => (
+            <div
+              key={i}
+              className="containerAlien"
+              onClick={() => {
+                selectedOmnitrix(ominitrix);
+              }}
+            >
+              <div className="boxAlien">
+                <img src={omnitrix.imageHuge || ''} alt={omnitrix.name || ''} />
+              </div>
+            </div>
+          ))}
+        </div>
+        {selectedOmnitrix && (
+          <div className="containerCharacter">
+            <div className="boxCharacters">
+              <div className="containerInformationsCharacters">
+                <div className="characterImage">
+                  <img src={selectedCharacter.imageHuge || ''} alt={selectedCharacter.name || ''} />
+                </div>
+                <div className="boxInformations">
+                  <h1>Nome: {selectedCharacter.name}</h1>
                   <h1>Primeira Aparição: {selectedCharacter.firstAppearance}</h1>
                 </div>
               </div>
