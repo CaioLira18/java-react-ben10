@@ -83,9 +83,9 @@ const Home = () => {
       .then(response => response.json())
       .then(data => {
         if (Array.isArray(data)) setOmnitrix(data);
-        else console.error('Formato inesperado para Omnitrix:', data);
+        else console.error('Formato inesperado para Characters:', data);
       })
-      .catch(error => console.error('Erro ao buscar Omnitrix:', error));
+      .catch(error => console.error('Erro ao buscar Characters:', error));
   }, []);
 
   return (
@@ -105,7 +105,7 @@ const Home = () => {
               onClick={() => {
                 clickSound.play();
                 setSelectedAlien(alien);
-                setUltimateSelected(null); 
+                setUltimateSelected(null); // resetar ao selecionar outro alien
               }}
             >
               <div className="boxAlien">
@@ -166,7 +166,7 @@ const Home = () => {
                         <h1>Nome: {selectedAlien.name}</h1>
                         <h1>Planeta: {selectedAlien.planet}</h1>
                         <h1>Raça: {selectedAlien.race}</h1>
-                        <h1>Habilidades / Poderes: {selectedAlien.powers}</h1>
+                        <h1>Poderes: {selectedAlien.powers}</h1>
                         <h1>Primeira Aparição: {selectedAlien.firstAppearance}</h1>
                       </div>
                     )}
@@ -176,7 +176,7 @@ const Home = () => {
                         <h1>Nome: {selectedAlien.ultimateName}</h1>
                         <h1>Planeta: {selectedAlien.planet}</h1>
                         <h1>Raça: {selectedAlien.ultimateRace}</h1>
-                        <h1>Habilidades / Poderes: {selectedAlien.ultimatePowers}</h1>
+                        <h1>Poderes: {selectedAlien.ultimatePowers}</h1>
                         <h1>Primeira Aparição: {selectedAlien.ultimateFirstAppearance}</h1>
                       </div>
                     )}
@@ -205,7 +205,7 @@ const Home = () => {
 
       <div className="characters">
         <h1>Characters</h1>
-        <div className="charactersChoose">
+        <div className="aliensChoose">
           {characters.map((character, i) => (
             <div
               key={i}
@@ -231,7 +231,7 @@ const Home = () => {
                   <h1>Nome: {selectedCharacter.name}</h1>
                   <h1>Idade: {selectedCharacter.age}</h1>
                   <h1>Raça: {selectedCharacter.race}</h1>
-                  <h1>Habilidades / Poderes: {selectedCharacter.powers}</h1>
+                  <h1>Poderes: {selectedCharacter.powers}</h1>
                   <h1>Primeira Aparição: {selectedCharacter.firstAppearance}</h1>
                 </div>
               </div>
@@ -242,7 +242,7 @@ const Home = () => {
 
       <div className="characters">
         <h1>Omnitrix</h1>
-        <div className="charactersChoose">
+        <div className="aliensChoose">
           {omnitrix.map((omnitrix, i) => (
             <div
               key={i}
@@ -257,9 +257,8 @@ const Home = () => {
             </div>
           ))}
         </div>
-        
         {selectedOmnitrix && (
-          <div className="containerOmnitrixInformations">
+          <div className="containerCharacter">
             <div className="boxCharacters">
               <div className="containerInformationsCharacters">
                 <div className="characterImage">
@@ -269,8 +268,8 @@ const Home = () => {
                   <h1>Nome: {selectedOmnitrix.name}</h1>
                   <h1>Descrição: {selectedOmnitrix.description}</h1>
                   <h1>Portador: {selectedOmnitrix.portador}</h1>
-                  <h1>Pontos fortes: {selectedOmnitrix.pontosFortes}</h1>
-                  <h1>Pontos fracos: {selectedOmnitrix.pontosFracos}</h1>
+                  <h1>Pontos Fortes: {selectedOmnitrix.pontosFortes}</h1>
+                  <h1>Pontos Fracos: {selectedOmnitrix.pontosFracos}</h1>
                   <h1>Primeira Aparição: {selectedOmnitrix.firstAppearance}</h1>
                 </div>
               </div>
