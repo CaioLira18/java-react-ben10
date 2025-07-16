@@ -97,11 +97,11 @@ npm run dev
 
 ## 🖼️ Screenshots
 
-<p align="center"> 
-<strong>🏠 Home </strong><br/> 
+<p align="left"> 
+<strong>👽 Aliens </strong><br/> 
 <img src="photos/ben1.png" alt="Home" width="400"/><br/><br/>
   
-<strong>👽 Aliens</strong><br/>
+<strong>📸 Aliens Photos </strong><br/>
 <img src="photos/ben2.png" alt="Aliens" width="400"/><br/><br/>
 
 <strong>🧑 Characters</strong><br/>
