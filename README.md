@@ -97,18 +97,16 @@ npm run dev
 
 ## 🖼️ Screenshots
 
-<p align="center">
-  # Home
-  <img src="photos/ben1.png" alt="Tela 1" width="400"/>
-  <br/>
-  # Aliens
-  <img src="photos/ben2.png" alt="Tela 2" width="400"/>
-  <br/>
-  # Characters
-  <img src="photos/ben3.png" alt="Tela 3" width="400"/>
-  <br/>
-  # Omnitrixs
-  <img src="photos/ben4.png" alt="Tela 4" width="400"/>
+<p align="center"> <strong>🏠 Home</strong><br/> <img src="photos/ben1.png" alt="Home" width="400"/><br/><br/>
+<strong>👽 Aliens</strong><br/>
+<img src="photos/ben2.png" alt="Aliens" width="400"/><br/><br/>
+
+<strong>🧑 Characters</strong><br/>
+<img src="photos/ben3.png" alt="Characters" width="400"/><br/><br/>
+
+<strong>⌚ Omnitrix</strong><br/>
+<img src="photos/ben4.png" alt="Omnitrix" width="400"/>
+
 </p>
 
 ## 🚀 Usage
