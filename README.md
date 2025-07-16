@@ -95,6 +95,22 @@ mvn spring-boot:run
 npm run dev
 ```
 
+## 🖼️ Screenshots
+
+<p align="center">
+  # Home
+  <img src="photos/ben1.png" alt="Tela 1" width="400"/>
+  <br/>
+  # Aliens
+  <img src="photos/ben2.png" alt="Tela 2" width="400"/>
+  <br/>
+  # Characters
+  <img src="photos/ben3.png" alt="Tela 3" width="400"/>
+  <br/>
+  # Omnitrixs
+  <img src="photos/ben4.png" alt="Tela 4" width="400"/>
+</p>
+
 ## 🚀 Usage
 
 - **Browse Characters**: Navigate through detailed character profiles
