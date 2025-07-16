@@ -97,7 +97,10 @@ npm run dev
 
 ## 🖼️ Screenshots
 
-<p align="center"> <strong>🏠 Home</strong><br/> <img src="photos/ben1.png" alt="Home" width="400"/><br/><br/>
+<p align="center"> 
+<strong>🏠 Home </strong><br/> 
+<img src="photos/ben1.png" alt="Home" width="400"/><br/><br/>
+  
 <strong>👽 Aliens</strong><br/>
 <img src="photos/ben2.png" alt="Aliens" width="400"/><br/><br/>
 
