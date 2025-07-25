@@ -39,39 +39,6 @@ html, body {
   padding: 0;
 }
 
-/* Footer */
-.footer {
-  background-color: #064b1c;
-  color: white;
-  padding: 40px 0;
-  font-family: 'Arial', sans-serif;
-  margin-top: 100px;
-  width: 100vw; /* Força 100% da viewport width */
-  margin-left: calc(-50vw + 50%); /* Quebra qualquer limitação de container pai */
-  box-sizing: border-box;
-}
-
-.footer-container {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.footer-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.footer-text {
-  font-size: 14px;
- 
-}
 
 body > div {
   width: 100%;
@@ -407,6 +374,18 @@ body > div {
   transform: scale(1.05);
 }
 
+.omnitrixImage img {
+  width: 30%;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: 0.3s all ease-in-out;
+}
+
+.omnitrixImage img:hover {
+  filter: drop-shadow(0 4px 10px rgba(254, 255, 254, 0.6));
+  transform: scale(1.05);
+}
+
 /* Divider */
 .divider {
   display: flex;
@@ -503,7 +482,11 @@ body > div {
   
   .alienImage img,
   .characterImage img {
-    width: 80px;
+    width: 80px auto;
+  }
+
+  .omnitrixImage img {
+    width: 80px auto;
   }
   
   .boxInformations {
@@ -525,6 +508,14 @@ body > div {
   }
   
   .ominitrix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    max-width: 100vw;
+  }
+
+  .containerCharacter {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -591,6 +582,10 @@ body > div {
   .characterImage img:hover {
     transform: scale(1.1);
   }
+
+  .omnitrixImage img {
+    width: 250px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -599,6 +594,11 @@ body > div {
   }
   
   .containerInformations {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .containerInformationsCharacters {
     display: flex;
     flex-direction: column;
   }
@@ -656,7 +656,6 @@ body > div {
   }
   
   .boxInformations h1 {
-    margin-top: -20px;
     font-size: 12px;
     margin: 5px 0;
   }
@@ -678,6 +677,7 @@ body > div {
   .navigation-buttons button {
     width: 30px;
     height: 30px;
+    margin-left: 20px;
   }
 
   .footer-text {
@@ -687,4 +687,9 @@ body > div {
   .footer-title {
     font-size: 15px;
   }
+
+  .omnitrixImage img {
+    width: 150px;
+  }
+
 }

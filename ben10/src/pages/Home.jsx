@@ -247,7 +247,7 @@ const Home = () => {
             <div className="containerCharacter">
               <div className="boxCharacters">
                 <div className="containerInformationsCharacters">
-                  <div className="characterImage">
+                  <div className="omnitrixImage">
                     <img src={selectedOmnitrix.imageHuge || ''} alt={selectedOmnitrix.name || ''} />
                   </div>
                   <div className="boxInformations">
