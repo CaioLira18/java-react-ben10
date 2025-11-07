@@ -51,7 +51,7 @@ const Home = () => {
 
   const visibleAliens = aliens.slice(0, visibleCount);
   const hasMoreAliens = visibleCount < aliens.length;
-  const API_URL = "http://localhost:8080/api";
+  const API_URL = "https://java-react-ben10.onrender.com/api";
 
   useEffect(() => {
     fetch(`${API_URL}/aliens`)
